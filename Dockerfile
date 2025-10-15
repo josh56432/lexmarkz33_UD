@@ -29,7 +29,7 @@ echo -e "${BLUE}"
 echo "┌────────────────────────────────────────────────────────────┐"
 echo "│   Lexmark Z33 Printer Universal Driver                     │"
 echo "│   by josh56432                                             │"
-echo "│   ☕ Buy me a coffee: https://buymeacoffee.com/josh56432    │"
+echo "│   Buy me a coffee: https://buymeacoffee.com/josh56432      │"
 echo "└────────────────────────────────────────────────────────────┘"
 echo -e "${RESET}"
 
