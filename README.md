@@ -49,7 +49,7 @@ Serial console only (`console=ttyS0`):
 podman run --rm -it --privileged josh56432/lexmark_ud:latest
 ```
 
-### ⚙️ Install Mode
+### ⚙️ Install Mode (recommended for first time run)
 Boots the VM with VGA + VNC and executes  
 `/lexmarkz33-1.0-3.sh` automatically:
 
@@ -62,7 +62,7 @@ Access via VNC:
 vncviewer 127.0.0.1:5901
 ```
 
-### 🪟 Debug Mode
+### 🪟 Debug Mode (for cleaning cycles and installing new cartridges)
 VGA + VNC enabled, auto-runs `z23-z33lsc` for testing:
 
 ```bash
