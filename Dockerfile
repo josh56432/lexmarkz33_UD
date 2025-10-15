@@ -57,18 +57,15 @@ case "$MODE" in
   debug)
     echo "[INFO] Debug mode enabled: VGA + VNC + z23-z33lsc"
     AUTOSTART="z23-z33lsc"
-    KARGS="$KARGS vga=normal"
     VNC="-vnc 0.0.0.0:1"
     ;;
   install)
     echo "[INFO] Install mode: VGA + VNC + /lexmarkz33-1.0-3.sh"
     AUTOSTART="/lexmarkz33-1.0-3.sh"
-    KARGS="$KARGS vga=normal"
     VNC="-vnc 0.0.0.0:1"
     ;;
   *)
     echo "[INFO] Headless mode (default)"
-    KARGS="$KARGS console=ttyS0"
     VNC="-nographic"
     ;;
 esac
@@ -83,7 +80,7 @@ exec qemu-system-i386 \
   -boot c \
   -usb \
   -device usb-host,vendorid=0x043d,productid=0x0021 \
-  -append "$KARGS" \
+  -vga cirrus \
   $VNC \
   -monitor unix:/var/ryb/qemu-rh8-monitor.sock,server=on,wait=off \
   -serial unix:/var/ryb/qemu-rh8-serial.sock,server=on,wait=off
