@@ -109,7 +109,6 @@ cd lexmarkz33_ud
 podman build -t lexmarkz33_ud .
 ```
 
-> The Red Hat 8 VM image (`image/redhat8.qcow2`) is not stored in GitHub for size reasons; add it manually before building.
 
 ---
 
