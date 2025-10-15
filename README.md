@@ -99,18 +99,7 @@ This ensures the container runs in the background, restarts on failure, and stop
 
 ---
 
-## 🧱 Building Locally (Optional)
 
-If you want to rebuild the container from source:
-
-```bash
-git clone https://github.com/josh56432/lexmarkz33_ud.git
-cd lexmarkz33_ud
-podman build -t lexmarkz33_ud .
-```
-
-
----
 
 ## 🧰 File Layout
 
