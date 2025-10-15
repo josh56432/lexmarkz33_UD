@@ -55,7 +55,7 @@ docker run --rm -it --privileged ghcr.io/josh56432/lexmark_ud:latest
 Serial console only (`console=ttyS0`):
 
 ```bash
-podman run --rm -it --privileged josh56432/lexmark_ud:latest
+podman run --rm -it --privileged docker.io/josh56432/lexmark_ud:latest
 ```
 
 ### ⚙️ Install Mode (recommended for first time run)
@@ -63,7 +63,7 @@ Boots the VM with VGA + VNC and executes
 `/lexmarkz33-1.0-3.sh` automatically:
 
 ```bash
-podman run --rm -it --privileged -p 5901:5901 josh56432/lexmark_ud:latest --install
+podman run --rm -it --privileged -p 5901:5901 docker.io/josh56432/lexmark_ud:latest --install
 ```
 
 Access via VNC:
@@ -75,7 +75,7 @@ vncviewer 127.0.0.1:5901
 VGA + VNC enabled, auto-runs `z23-z33lsc` for testing:
 
 ```bash
-podman run --rm -it --privileged -p 5901:5901 josh56432/lexmark_ud:latest --debug
+podman run --rm -it --privileged -p 5901:5901 docker.io/josh56432/lexmark_ud:latest --debug
 ```
 
 ---
