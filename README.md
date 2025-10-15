@@ -37,6 +37,15 @@ or with Docker:
 ```bash
 docker run --rm -it --privileged josh56432/lexmark_ud:latest
 ```
+or with ghcr.io:
+
+```bash
+podman run --rm -it --privileged ghcr.io/josh56432/lexmark_ud:latest
+```
+```bash
+docker run --rm -it --privileged ghcr.io/josh56432/lexmark_ud:latest
+```
+
 
 ---
 
