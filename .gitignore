@@ -1,0 +1,7 @@
+cat > .gitignore <<'EOF'
+# Ignore large VM images
+image/*.qcow2
+# Ignore build artifacts
+*.log
+*.tmp
+EOF
