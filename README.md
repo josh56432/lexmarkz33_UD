@@ -1,5 +1,4 @@
-# 🖨️ Lexmark Z33 Universal Driver VM  
-**Author:** Josh (<https://buymeacoffee.com/josh56432>)  
+# 🖨️ Lexmark Z33 Universal Driver VM   
 **Image:** [`docker.io/josh56432/lexmark_ud:latest`](https://hub.docker.com/r/josh56432/lexmark_ud)  
 **Base:** Alpine Linux + QEMU + Embedded Red Hat 8 VM  
 
