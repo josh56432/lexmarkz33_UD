@@ -100,20 +100,6 @@ This ensures the container runs in the background, restarts on failure, and stop
 ---
 
 
-
-## 🧰 File Layout
-
-```
-.
-├── Dockerfile              # Container definition
-├── image/
-│   └── redhat8.qcow2       # Embedded RH8 VM image (ignored by git)
-├── README.md
-└── /usr/local/bin/run-vm   # Auto-generated entrypoint script
-```
-
----
-
 ## 🧠 Troubleshooting
 
 - **Permission denied** during save/build  
