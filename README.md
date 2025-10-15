@@ -71,27 +71,31 @@ podman run --rm -it --privileged -p 5901:5901 josh56432/lexmark_ud:latest --debu
 
 ---
 
-## 🔧 Systemd Integration
+## 🧠 Persistent Operation (Podman Only)
 
-Create `/etc/systemd/system/lexmark-vm.service`:
+Instead of writing a manual systemd service, use **Podman’s native systemd integration**:
 
-```ini
-[Unit]
-Description=Lexmark Z33 Universal Driver VM
-After=network.target
+1. Generate a systemd unit for persistent operation:
+   ```bash
+   podman generate systemd --name lexmark-vm --files --new
+   ```
 
-[Service]
-ExecStart=/usr/bin/podman run --rm --privileged --name lexmark-vm josh56432/lexmark_ud:latest
-Restart=always
+2. Move the generated service file into place:
+   ```bash
+   sudo mv container-lexmark-vm.service /etc/systemd/system/
+   ```
 
-[Install]
-WantedBy=multi-user.target
-```
+3. Enable and start automatically on boot:
+   ```bash
+   sudo systemctl enable --now container-lexmark-vm.service
+   ```
 
-Enable it:
-```bash
-sudo systemctl enable --now lexmark-vm.service
-```
+4. Verify it’s running:
+   ```bash
+   systemctl status container-lexmark-vm.service
+   ```
+
+This ensures the container runs in the background, restarts on failure, and stops cleanly with the system.
 
 ---
 
