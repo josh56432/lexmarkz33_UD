@@ -29,21 +29,21 @@ The image can run **headless** for print job forwarding or in **VNC debug mode**
 You can pull and run directly — **no build needed**:
 
 ```bash
-podman run --rm -it --privileged docker.io/josh56432/lexmarkz33_ud:latest
+podman run --rm -it -p <port>:515 --privileged docker.io/josh56432/lexmarkz33_ud:latest &
 ```
 
 or with Docker:
 
 ```bash
-docker run --rm -it --privileged josh56432/lexmarkz33_ud:latest
+docker run --rm -it -p <port>:515 --privileged josh56432/lexmarkz33_ud:latest &
 ```
 or with ghcr.io:
 
 ```bash
-podman run --rm -it --privileged ghcr.io/josh56432/lexmarkz33_ud:latest
+podman run --rm -it -p <port>:515 --privileged ghcr.io/josh56432/lexmarkz33_ud:latest &
 ```
 ```bash
-docker run --rm -it --privileged ghcr.io/josh56432/lexmarkz33_ud:latest
+docker run --rm -it -p <port>:515 --privileged ghcr.io/josh56432/lexmarkz33_ud:latest &
 ```
 
 
@@ -52,31 +52,32 @@ docker run --rm -it --privileged ghcr.io/josh56432/lexmarkz33_ud:latest
 ## ▶️ Usage Modes
 
 ### 🧩 Normal (Headless)
-Serial console only (`console=ttyS0`):
+
 
 ```bash
-podman run --rm -it --privileged docker.io/josh56432/lexmarkz33_ud:latest
+podman run --rm -it --privileged -p <port>:515 docker.io/josh56432/lexmarkz33_ud:latest &
 ```
 
-### ⚙️ Install Mode (recommended for first time run)
-Boots the VM with VGA + VNC and executes  
-`/lexmarkz33-1.0-3.sh` automatically:
+### ⚙️ Debug Mode
+Boot the VM with VGA + VNC and execute  
+`/lexmarkz33-1.0-3.sh` as root:
 
 ```bash
-podman run --rm -it --privileged -p 5901:5901 docker.io/josh56432/lexmarkz33_ud:latest --install
+podman run --rm -it --privileged -p 5901:5901 -p <port>:515 docker.io/josh56432/lexmarkz33_ud:latest &
 ```
 
 Access via VNC:
 ```bash
-vncviewer 127.0.0.1:5901
+vncviewer <IP>:5901
 ```
+Login: root
+Then run:
 
-### 🪟 Debug Mode (for cleaning cycles and installing new cartridges)
-VGA + VNC enabled, auto-runs `z23-z33lsc` for testing:
+```startx```
 
-```bash
-podman run --rm -it --privileged -p 5901:5901 docker.io/josh56432/lexmarkz33_ud:latest --debug
-```
+Then in xterm:
+
+```./lexmarkz33-1.0-3.sh``` or ```z32-z33lsc```
 
 ---
 
